@@ -1,0 +1,62 @@
+{
+  "name": "product-admin-client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "DOTENV_CONFIG_PATH=./environments/.env.development node -r dotenv/config $(which craco) start",
+    "build:prod": "DOTENV_CONFIG_PATH=./environments/.env.production node -r dotenv/config $(which craco) build",
+    "build:dev": "DOTENV_CONFIG_PATH=./environments/.env.development node -r dotenv/config $(which craco) build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint:fix": "eslint '**/*.{ts,tsx}' --quiet --fix",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@craco/craco": "^6.1.1",
+    "@material-ui/core": "^4.11.3",
+    "clsx": "^1.1.1",
+    "env-var": "^7.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.21.0",
+    "@typescript-eslint/parser": "^4.21.0",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "craco-alias": "^2.2.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.23.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-react": "^7.23.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
