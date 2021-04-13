@@ -11,7 +11,12 @@
 규식님 부탁드리겠습니다.
 
 ### VSCode 사용자
-
+ 
 1. eslint, prettier extension을 설치 (workspace 단위로 활성화 시킬것을 추천드립니다.)
 2. Code > Preferences > Settings > Default formatter를 Prettier - Code formatter로 설정
-3. 정상 적용 확인을 위하여 product-admin-client workspace vscode 재 실행
+3. vscode 설정 추가
+   ```
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2
+   ```
+4. 정상 적용 확인을 위하여 product-admin-client workspace vscode 재 실행
