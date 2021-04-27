@@ -34,7 +34,7 @@ const AdminRouter: FC<AdminRouterProps> = ({ loginPage, children }) => {
   return (
     <Switch>
       <Route path="/login" exact render={() => createElement(loginPage)} />
-      <Route path="/" render={() => computedChildren} />
+      <Switch>{computedChildren}</Switch>
     </Switch>
   )
 }
