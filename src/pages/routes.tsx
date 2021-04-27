@@ -1,10 +1,12 @@
 import { ReactElement, createElement, ComponentType, FC } from 'react'
 import { Route, RouteProps } from 'react-router-dom'
+
 import Layout from '~/components/organisms/Layout'
-import Dashboard from './dashboard'
-import * as member from './member'
-import * as product from './product'
+import Dashboard from './Dashboard'
 import NotFound from './NotFound'
+
+import { MemberList, MemberShow } from './member'
+import { ProductList, ProductShow } from './product'
 
 interface RouteWithLayoutProps
   extends Omit<RouteProps, 'component' | 'render' | 'children'> {
@@ -29,7 +31,9 @@ const RouteWithLayout: FC<RouteWithLayoutProps> = ({
   return (
     <Route
       {...other}
-      render={() => createElement(Layout, {}, createElement(component))}
+      render={(routerProps) =>
+        createElement(Layout, {}, createElement(component, { ...routerProps }))
+      }
     />
   )
 }
@@ -43,29 +47,30 @@ export type RouteElement = ReactElement<RouteWithLayoutProps>
 export type RoutesFunction = (props: RouteFunctionProps) => RouteElement[]
 
 const routes: RoutesFunction = ({ permissions }) => {
-  console.log(permissions)
   // permission check
+  console.log(permissions)
+
   return [
     <RouteWithLayout exact key="/" path="/" component={Dashboard} />,
     <RouteWithLayout
       key="member-list"
       path="/member/list"
-      component={member.MemberList}
+      component={MemberList}
     />,
     <RouteWithLayout
       key="member-show"
       path="/member/show"
-      component={member.MemberShow}
+      component={MemberShow}
     />,
     <RouteWithLayout
       key="product-list"
       path="/product/list"
-      component={product.ProductList}
+      component={ProductList}
     />,
     <RouteWithLayout
       key="product-show"
       path="/product/show"
-      component={product.ProductShow}
+      component={ProductShow}
     />,
     <RouteWithLayout key="notFound" path="*" component={NotFound} />,
   ]

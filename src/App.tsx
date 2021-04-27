@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import createAuthProvider from '~/auth/authProvider'
 import AdminContext from '~/core/AdminContext'
 import AdminRouter from '~/core/AdminRouter'
-import Login from '~/pages/login'
+import Login from '~/pages/Login'
 import pageRoutes from '~/pages/routes'
 
 function App() {
