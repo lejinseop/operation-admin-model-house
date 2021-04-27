@@ -1,5 +1,11 @@
 import { createContext } from 'react'
-import { AuthProvider } from './types'
+
+export type AuthProvider = {
+  login: () => Promise<any>
+  logout: () => Promise<void>
+  checkAuth: () => Promise<any>
+  getPermissions: () => Promise<any>
+}
 
 const defaultProvider: AuthProvider = {
   login: () => Promise.resolve(),

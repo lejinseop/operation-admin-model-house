@@ -1,5 +1,7 @@
-import { ReactElement, createElement, ComponentType, FC } from 'react'
-import { Route, RouteProps } from 'react-router-dom'
+import { createElement } from 'react'
+import type { ReactElement, ComponentType, FC } from 'react'
+import { Route } from 'react-router-dom'
+import type { RouteProps } from 'react-router-dom'
 
 import Layout from '~/components/organisms/Layout'
 import Dashboard from './Dashboard'

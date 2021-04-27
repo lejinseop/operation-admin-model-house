@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+
 import useGetPermission from './useGetPermission'
 
 interface UsePermissionsState {

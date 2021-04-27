@@ -1,6 +1,7 @@
 import type { FC } from 'react'
+
 import AuthContext from '~/auth/AuthContext'
-import { AuthProvider } from '../auth/types'
+import type { AuthProvider } from '~/auth/AuthContext'
 
 interface AdminContextProps {
   authProvider: AuthProvider

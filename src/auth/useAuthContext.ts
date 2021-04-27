@@ -1,6 +1,7 @@
 import { useContext } from 'react'
-import AuthContext from '~/auth/AuthContext'
-import { AuthProvider } from './types'
+
+import AuthContext from './AuthContext'
+import type { AuthProvider } from './AuthContext'
 
 const useAuthProvider = (): AuthProvider => useContext(AuthContext)
 

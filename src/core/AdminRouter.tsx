@@ -1,6 +1,8 @@
-import { FC, useState, useEffect, ComponentType, createElement } from 'react'
+import { useState, useEffect, createElement } from 'react'
+import type { FC, ComponentType } from 'react'
 import { Switch, Route } from 'react-router-dom'
-import { RouteElement, RoutesFunction } from '~/pages/routes'
+
+import type { RouteElement, RoutesFunction } from '~/pages/routes'
 import useGetPermission from '~/auth/useGetPermission'
 
 interface AdminRouterProps {

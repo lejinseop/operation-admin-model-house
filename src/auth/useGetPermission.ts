@@ -1,4 +1,5 @@
 import { useCallback } from 'react'
+
 import useAuthProvider from './useAuthContext'
 
 type GetPermissions = () => Promise<any>
