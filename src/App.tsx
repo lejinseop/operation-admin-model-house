@@ -1,7 +1,7 @@
 import { ThemeProvider } from '@material-ui/core/styles'
 import generateTheme from '~/theme'
 import { BrowserRouter } from 'react-router-dom'
-import createAuthProvider from './authProvider'
+import createAuthProvider from '~/auth/authProvider'
 import AdminContext from '~/core/AdminContext'
 import AdminRouter from '~/core/AdminRouter'
 import Login from '~/pages/login'

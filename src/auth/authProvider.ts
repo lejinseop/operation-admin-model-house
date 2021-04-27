@@ -1,4 +1,4 @@
-import { AuthProvider } from '~/auth/types'
+import { AuthProvider } from './types'
 
 interface MockUser {
   name: string
