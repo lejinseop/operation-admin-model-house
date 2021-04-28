@@ -40,15 +40,17 @@ const RouteWithLayout: FC<RouteWithLayoutProps> = ({
   )
 }
 
-interface RouteFunctionProps {
+export type ChildRouteElement = ReactElement<RouteWithLayoutProps>
+
+interface ResolveChildRoutesProps {
   permissions: any
 }
 
-export type RouteElement = ReactElement<RouteWithLayoutProps>
+export type ResolveChildRoutes = (
+  props: ResolveChildRoutesProps,
+) => ChildRouteElement[]
 
-export type RoutesFunction = (props: RouteFunctionProps) => RouteElement[]
-
-const routes: RoutesFunction = ({ permissions }) => {
+const resolveChildRoutes: ResolveChildRoutes = ({ permissions }) => {
   // permission check
   console.log(permissions)
 
@@ -78,4 +80,4 @@ const routes: RoutesFunction = ({ permissions }) => {
   ]
 }
 
-export default routes
+export default resolveChildRoutes
