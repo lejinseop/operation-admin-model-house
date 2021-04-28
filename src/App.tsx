@@ -1,6 +1,7 @@
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import store from '~/app/store'
+import { PersistGate } from 'redux-persist/integration/react'
+import store, { persistor } from '~/app/store'
 
 import AdminContext from '~/context'
 import RootRouter from '~/pages/rootRouter'
@@ -11,13 +12,15 @@ import generateTheme from '~/theme'
 function App() {
   return (
     <Provider store={store}>
-      <ThemeProvider theme={generateTheme()}>
-        <BrowserRouter>
-          <AdminContext>
-            <RootRouter />
-          </AdminContext>
-        </BrowserRouter>
-      </ThemeProvider>
+      <PersistGate loading={null} persistor={persistor}>
+        <ThemeProvider theme={generateTheme()}>
+          <BrowserRouter>
+            <AdminContext>
+              <RootRouter />
+            </AdminContext>
+          </BrowserRouter>
+        </ThemeProvider>
+      </PersistGate>
     </Provider>
   )
 }
